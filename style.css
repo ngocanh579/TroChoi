@@ -1,0 +1,208 @@
+/* CSS cho giao diện trò chơi Oản Tù Tì */
+
+/* Cấu trúc chung */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa; /* Nền sáng */
+    color: #333; /* Màu chữ tối dễ đọc */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 10px; /* Thêm padding để tránh các phần tử bị dính vào mép màn hình trên di động */
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #2196F3;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 5px 0;
+    color: #757575;
+}
+
+.nut-bam {
+    background-color: #FF9800;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.nut-bam:hover {
+    background-color: #FF5722;
+}
+
+.canh-bao {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #9e9e9e;
+}
+
+/* Cấu trúc khung */
+.khung {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    height: 550px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    justify-content: space-evenly;
+}
+
+/* Cấu trúc tay */
+.tay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.tay img {
+    width: 180px;
+    height: 180px;
+    transition: transform 0.5s;
+}
+
+/* Các lựa chọn Búa, Bao, Kéo */
+.chon {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.chon img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.chon img:hover {
+    transform: scale(1.2);
+}
+
+/* Phần tay người chơi và máy */
+#man-choi-game .khung {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+#tayNguoiChoi {
+    border: 3px solid #2196F3;
+    border-radius: 10px;
+}
+
+#tayMay {
+    border: 3px solid #FF5722;
+    border-radius: 10px;
+}
+
+/* Hiệu ứng lắc tay */
+.lac {
+    animation: lac 0.5s ease;
+}
+
+@keyframes lac {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+}
+
+/* Giao diện kết quả cuối cùng */
+#man-ket-thuc .khung {
+    padding: 40px 30px;
+    height: 400px;
+    justify-content: center;
+}
+
+#ket-qua-cuoi {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin: 20px 0;
+}
+
+.khung h1 {
+    font-size: 36px;
+    color: #2196F3;
+}
+
+/* Responsive - Media Queries */
+
+/* Màn hình nhỏ (Tablet, điện thoại lớn) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .tay img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .chon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .khung {
+        padding: 20px;
+        max-width: 90%;
+        height: auto;
+    }
+
+    .chon {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #man-choi-game {
+        max-width: 100%;
+    }
+}
+
+/* Màn hình nhỏ hơn (Điện thoại di động) */
+@media (max-width: 480px) {
+    .nut-bam {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .tay img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .chon img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .khung {
+        padding: 15px;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
